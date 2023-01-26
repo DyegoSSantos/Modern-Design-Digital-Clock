@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Barlow;
+}
+
+body{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(5,46,61,1) 50%, rgba(0,0,0,1) 90%);
+    color: antiquewhite;
+}
+
+div{
+    mborder: 1px solid red;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 99.5vh;
+}
+
+.semana{
+    display: flex;
+    justify-content: space-evenly;
+    height: 25%;
+    align-items: center;
+}
+
+.semana div{
+    padding-bottom: 15px;
+    width: 7%;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 3px 2px 3px black;
+    color: grey;
+}
+
+#caixa{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+}
+
+.hora{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+    font-size: 14rem;
+    height: 40%;
+    text-shadow: 3px 2px 3px black;
+    /*border: 1px solid blue;*/
+}
+
+.hora #hora{
+    display: inline;
+    /*border: 1px solid red;*/
+    width: 60%;
+}
+
+.hora #segundos{
+    display: inline;
+    font-size: 6rem;
+    width: 10%;
+    /* position:relative;
+    right: 4%; */
+}
+
+.data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 3px 2px 3px black;
+}
+
+#dia{
+    font-size: 5.5rem;
+    padding-left: 5%;
+}
+
+#mesano{
+    font-size: 2.5rem;
+    padding-right: 5%;
+}
+
+.linhatempo{
+    padding: 0 3%;
+}
+
+#barra1{
+    width: 98.5%;
+    height: 3px;
+    border: 1px solid rgb(43, 43, 43);
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    left: 5px;
+}
+
+#barra2{
+    width: 50%;
+    height: 3px;
+    background-color: aqua;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.horasbarra{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    text-shadow: 3px 2px 3px black;
+    position: relative;
+    top: 30%;
+}
+
+#h6{
+    position: relative;
+    left: 0.4%;
+}
+
+#h12{
+    position: relative;
+    left: 0.6%;
+}
+
+#h18{
+    position: relative;
+    left: 0.4%;
+}
+
+#bolinha{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: aqua;
+    position: relative;
+    right: -7px;
+    top: -5px;
+    box-shadow: 0 0 1.2em aqua, 0 0 1.2em aqua, 0 0 1.2em #00ffff;
+}
+
+.week{
+    border: none;
+    color: grey;
+}

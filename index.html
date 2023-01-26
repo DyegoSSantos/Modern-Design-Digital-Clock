@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="semana">
+            <div class="week" id="seg">seg</div>
+            <div class="week" id="ter">ter</div>
+            <div class="week" id="qua">qua</div>
+            <div class="week" id="qui">qui</div>
+            <div class="week" id="sex">sex</div>
+            <div class="week" id="sab">sáb</div>
+            <div class="week" id="dom">dom</div>
+        </div>
+        <div class="hora">
+            <div id="caixa">
+                <div id="hora">22:24</div>
+                <div id="segundos">:53</div>
+            </div>
+        </div>
+        <div class="linhatempo">
+            <div id="barra1">
+                <div id="barra2">
+                    <div id="bolinha"></div>
+                </div>
+            </div>
+            <div class ="horasbarra">
+                <div id="h0">0</div>
+                <div id="h6">6</div>
+                <div id="h12">12</div>
+                <div id="h18">18</div>
+                <div id="h24">24</div>
+            </div>
+        </div>
+        <div class="data">
+            <div id="dia">23</div>
+            <div id="mesano">Janeiro, 2023</div>
+        </div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let horaminuto_ = document.getElementById('hora');
+            let segundos_ = document.getElementById('segundos');
+            let dia_ = document.getElementById('dia');
+            let mesano_ = document.getElementById('mesano');
+
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+
+            let d_ = new Date().getDate();
+            let m_ = new Date().getMonth();
+            let y_ = new Date().getFullYear();
+
+            let diasemana = new Date().getDay();
+            
+            //diasemana
+            
+            if(diasemana == 0){
+                zerar();
+                document.getElementById("dom").style.color = '#00ffff';
+                document.getElementById("dom").style.borderBottom = "1px solid aqua";
+                
+            }
+
+            if(diasemana == 1){
+                zerar();
+                document.getElementById("seg").style.color = '#00ffff';
+                document.getElementById("seg").style.borderBottom = "1px solid aqua";
+            }
+
+            if(diasemana == 2){
+                zerar();
+                document.getElementById("ter").style.color = '#00ffff';
+                document.getElementById("ter").style.borderBottom = "1px solid aqua";
+            }
+
+            if(diasemana == 3){
+                zerar();
+                document.getElementById("qua").style.color = '#00ffff';
+                document.getElementById("qua").style.borderBottom = "1px solid aqua";
+            }
+
+            if(diasemana == 4){
+                zerar();
+                document.getElementById("qui").style.color = '#00ffff';
+                document.getElementById("qui").style.borderBottom = "1px solid aqua";
+            }
+
+            if(diasemana == 5){
+                zerar();
+                document.getElementById("sex").style.color = '#00ffff';
+                document.getElementById("sex").style.borderBottom = "1px solid aqua";
+            }
+
+            if(diasemana == 6){
+                zerar();
+                document.getElementById("sab").style.color = '#00ffff';
+                document.getElementById("sab").style.borderBottom = "1px solid aqua";
+            }
+
+            d_ = (d_ < 10) ? "0" + d_ : d_
+            
+            let meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+
+            let mesatual = meses[m_]
+
+            let totalsegundos_ = (((h * 3600) + (m * 60) + s) / 86400) * 100
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            mesano_.innerHTML = mesatual + ', ' + y_
+            dia_.innerHTML = d_
+
+            horaminuto_.innerHTML = h + ':' + m
+            segundos_.innerHTML = ':' + s
+            
+            document.getElementById("barra2").style.width = totalsegundos_ + '%'
+
+
+            function zerar(){
+                document.getElementById("dom").style.color = 'grey';
+                document.getElementById("dom").style.borderBottom = "none";
+
+                document.getElementById("seg").style.color = 'grey';
+                document.getElementById("seg").style.borderBottom = "none";
+
+                document.getElementById("ter").style.color = 'grey';
+                document.getElementById("ter").style.borderBottom = "none";
+
+                document.getElementById("qua").style.color = 'grey';
+                document.getElementById("qua").style.borderBottom = "none";
+
+                document.getElementById("qui").style.color = 'grey';
+                document.getElementById("qui").style.borderBottom = "none";
+
+                document.getElementById("sex").style.color = 'grey';
+                document.getElementById("sex").style.borderBottom = "none";
+
+                document.getElementById("sab").style.color = 'grey';
+                document.getElementById("sab").style.borderBottom = "none";
+            }
+
+        });
+
+    </script>
+</body>
+</html>
